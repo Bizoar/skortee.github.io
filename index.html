@@ -1,1126 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-    @charset "UTF-8";
-/* ========== Google Fonts =========== */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
-/* ========== CSS Variables =========== */
-:root {
-  --primary-color: #ff5e3a;
-  --default-color: #4f5665;
-  --black-color: #000;
-  --grey-color: #f0f0f0;
-  --white-color: #fff;
-  --lightpink: #ffcce0;
-  --blue: #1a1aff;
-  --custom: #1a1aff;
-  --color: #4d4d4d;
-  --lightblue: #ccccff;
-  --box-shadow-1: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --box-shadow-2: 0 5px 15px rgba(255, 94, 58, 0.2);
-  --gradient: linear-gradient(to bottom, #fccb90, #ff9a9e);
-  --btn-gradient: linear-gradient(to bottom, #ff5151 50%, #ff5e3a);
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-  border: none;
-  outline: none;
-}
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--black-color);
-  background-color: var(--white-color);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: var(--black-color);
-  line-height: 1.2;
-  font-weight: 500;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-li {
-  list-style-type: none;
-}
-
-section {
-  padding: 5rem 0 5rem;
-  overflow: hidden;
-}
-
-p {
-  line-height: 3rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ========== Custom Classes =========== */
-.container {
-  max-width: 120rem;
-  padding: 0 3rem;
-  margin: auto;
-}
-
-@media (min-width: 1600px) {
-  .container {
-    max-width: 160rem;
-  }
-}
-@media (max-width: 567px) {
-  .container {
-    padding: 0 1rem;
-  }
-}
-.d-flex {
-  display: flex;
-  align-items: center;
-}
-
-/* ========== Header =========== */
-.header {
-  margin-bottom: 4rem;
-}
-.header .navbar {
-  padding: 2.5rem 0;
-  position: relative;
-  z-index: 1;
-}
-.header .navbar .row {
-  justify-content: space-between;
-}
-.header .navbar .row .nav-list a {
-  display: inline-block;
-  padding: 1rem;
-  font-size: 1.7rem;
-  font-weight: 500;
-  color: var(--black-color);
-}
-.header .navbar .row .nav-list a.user-link {
-  display: none;
-}
-.header .navbar .row .nav-list a:not(:last-child) {
-  margin-right: 0.5rem;
-}
-.header .navbar .row .nav-list a:hover {
-  color: var(--primary-color);
-}
-.header .navbar .row .icons .icon {
-  font-size: 2.2rem;
-  padding: 0.5rem;
-  color: var(--black-color);
-  cursor: pointer;
-  justify-content: center;
-  position: relative;
-}
-.header .navbar .row .icons .icon:not(:last-child) {
-  margin-right: 3rem;
-}
-.header .navbar .row .icons .icon span {
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  background-color: var(--primary-color);
-  border: 1px solid var(--black-color);
-  position: absolute;
-  top: 0.3rem;
-  right: 0.4rem;
-  border-radius: 50%;
-}
-.header .navbar .row .icons .icon:hover {
-  background-color: #f4f4f4;
-}
-.header .hamburger,
-.header .close {
-  display: none;
-}
-@media (min-width: 1600px) {
-  .header .header .navbar {
-    padding: 4rem 0;
-  }
-}
-@media (max-width: 768px) {
-  .header .navbar .row .icons {
-    display: none;
-  }
-  .header .navbar .row .nav-list {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    max-width: 35rem;
-    height: 100%;
-    background-color: var(--white-color);
-    z-index: 1000;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 4rem 1rem;
-    transition: 0.5s;
-  }
-  .header .navbar .row .nav-list a {
-    font-size: 1.8rem;
-  }
-  .header .navbar .row .nav-list a:not(:last-child) {
-    margin: 0 0 1rem 0;
-  }
-  .header .navbar .row .nav-list .close {
-    display: block;
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    color: var(--black-color);
-    font-size: 3rem;
-  }
-  .header .navbar .row .nav-list.show {
-    right: 0;
-  }
-  .header .navbar .row .hamburger {
-    display: block;
-    font-size: 3rem;
-    color: var(--black-color);
-  }
-}
-
-/* ========== Hero Area =========== */
-.header .hero {
-  height: 80vh;
-  margin: 0 3rem;
-}
-.header .hero .row {
-  height: 100%;
-  background: url("../images/bg.svg") center/cover no-repeat fixed;
-  border-radius: 2rem;
-  position: relative;
-}
-.header .hero .row .col {
-  margin-left: 5rem;
-}
-.header .hero .row .col .subtitle {
-  display: block;
-  font-size: 1.8rem;
-  margin-bottom: 4rem;
-}
-.header .hero .row .col h1 {
-  font-family: "Aclonica", sans-serif;
-  font-size: 13rem;
-  line-height: 1;
-}
-.header .hero .row .col h1 .i {
-  color: var(--primary-color);
-  position: relative;
-}
-.header .hero .row .col h1 .i:before {
-  content: "ı";
-  position: absolute;
-  color: var(--black-color);
-}
-.header .hero .row .col p {
-  font-size: 2rem;
-  margin-bottom: 6rem;
-}
-.header .hero .row .col .btn {
-  display: inline-block;
-  padding: 1.5rem 6rem;
-  border-radius: 1rem;
-  color: var(--white-color);
-  font-weight: 500;
-  font-size: 1.8rem;
-  background: var(--btn-gradient);
-  box-shadow: var(--box-shadow-1);
-}
-.header .hero .row img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-@media (max-width: 1600px) {
-  .header .hero .row img {
-    width: 40rem;
-  }
-}
-@media (max-width: 1200px) {
-  .header .hero .row .col h1 {
-    font-size: 8rem;
-  }
-}
-@media (max-width: 768px) {
-  .header .hero .row .col {
-    position: absolute;
-    top: 10%;
-    margin-left: 0;
-  }
-  .header .hero .row .col .subtitle {
-    font-size: 1.6rem;
-  }
-  .header .hero .row .col h1 {
-    font-size: 7rem;
-  }
-  .header .hero .row .col p {
-    font-size: 1.6rem;
-  }
-  .header .hero .row .col .btn {
-    padding: 1.2rem 4rem;
-  }
-  .header .hero .row img {
-    width: 40rem;
-  }
-}
-@media (max-width: 567px) {
-  .header .hero {
-    height: 100vh;
-    margin: 0 1rem;
-  }
-  .header .hero .row .col .subtitle {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
-  }
-  .header .hero .row .col h1 {
-    font-size: 7rem;
-  }
-  .header .hero .row .col p {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-  }
-  .header .hero .row .col .btn {
-    padding: 1.2rem 4rem;
-  }
-  .header .hero .row img {
-    width: 25rem;
-  }
-}
-/* ========== Collection =========== */
-.section .title {
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.section .prosubtitle {
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.section .title span {
-  display: inline-block;
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: 0.5rem;
-  position: relative;
-}
-.section .title span::before {
-  content: "";
-  position: absolute;
-  bottom: -0.7rem;
-  right: 2rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-}
-.section .title h2 {
-  font-size: 2.4rem;
-}
-
-.collection .filters {
-  justify-content: center;
-  margin-bottom: 7rem;
-}
-.collection .filters div {
-  padding: 1.7rem 4rem;
-  color: var(--default-color);
-  font-size: 1.7rem;
-  border-radius: 0.8rem;
-  box-shadow: var(--box-shadow-1);
-  cursor: pointer;
-}
-.collection .filters div:not(:last-child) {
-  margin-right: 4rem;
-}
-.collection .filters div:hover,
-.collection .filters div.active {
-  background: var(--gradient);
-  color: var(--white-color);
-  box-shadow: var(--box-shadow-2);
-}
-.collection .products .swiper-wrapper {
-  padding: 0 0 1.5rem;
-}
-.collection .products .product {
-  border-radius: 2.5rem;
-  box-shadow: var(--box-shadow-1);
-  overflow: hidden;
-}
-.collection .products .product .top {
-  background: var(--gradient);
-  height: 30rem;
-  justify-content: center;
-  position: relative;
-}
-.collection .products .product .top img {
-  height: 25rem;
-}
-.collection .products .product .top .icon {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border-radius: 50%;
-  font-size: 2.5rem;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-}
-.collection .products .product .top:hover .icon {
-  opacity: 1;
-  visibility: visible;
-}
-.collection .products .product .bottom {
-  padding: 2.5rem 2rem;
-}
-.collection .products .product .bottom h4 {
-  font-size: 1.8rem;
-  width: 85%;
-  height: 5rem;
-  margin-bottom: 1.5rem;
-}
-.collection .products .product .bottom .d-flex {
-  justify-content: space-between;
-}
-.collection .products .product .bottom .price {
-  color: var(--white-color);
-  background-color: var(--primary-color);
-  border-radius: 1rem;
-  padding: 0.5rem 2rem;
-}
-.collection .products .product .bottom .rating {
-  color: var(--primary-color);
-}
-.collection .products .product .bottom .rating i:not(:last-child) {
-  margin-right: 0.3rem;
-}
-.collection .products .pagination {
-  text-align: center;
-  margin-top: 3rem;
-}
-.collection .products .pagination .swiper-pagination-bullet {
-  background-color: var(--primary-color);
-  height: 1rem;
-  width: 1rem;
-}
-.collection .products .pagination .swiper-pagination-bullet-active {
-  width: 3rem;
-  border-radius: 1.5rem;
-}
-
-@media (min-width: 1600px) {
-  .collection .products .product .top {
-    height: 35rem;
-  }
-}
-@media (max-width: 768px) {
-  .collection .filters {
-    margin-bottom: 7rem;
-  }
-  .collection .filters div {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.6rem;
-  }
-  .collection .filters div:not(:last-child) {
-    margin-right: 2rem;
-  }
-}
-@media (max-width: 567px) {
-  .collection .filters {
-    flex-wrap: wrap;
-  }
-  .collection .filters div {
-    padding: 0.7rem 1rem;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .collection .filters div:not(:last-child) {
-    margin-right: 1rem;
-  }
-}
-/* ========== Arrivals =========== */
-.new-arrival .row {
-  display: grid;
-}
-.new-arrival .row .col {
-  position: relative;
-  padding: 1rem;
-}
-.new-arrival .row .col img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.new-arrival .row .col-1,
-.new-arrival .row .col-2 {
-  grid-column: 1;
-}
-.new-arrival .row .col-3 {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-}
-.new-arrival .row .col h3 {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  color: var(--white-color);
-  font-size: 2rem;
-  line-height: 3.5rem;
-}
-.new-arrival .row .col h3 span {
-  display: block;
-  margin-top: 3rem;
-}
-
-@media (max-width: 967px) {
-  .new-arrival .row .col h3 {
-    font-size: 1.6rem;
-    line-height: 2.5rem;
-  }
-}
-@media (max-width: 768px) {
-  .new-arrival .row {
-    display: block;
-  }
-  .new-arrival .row .col h3 {
-    bottom: 15%;
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-/* ========== Categories Product =========== */
-.categories .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 7rem 4rem;
-  padding-top: 4rem;
-}
-.categories .product {
-  border-radius: 2.5rem;
-  border: 1px solid rgba(144, 144, 144, 0.25);
-  overflow: hidden;
-  transition: 0.3s;
-}
-.categories .product .top {
-  background: var(--grey-color);
-  height: 30rem;
-  justify-content: center;
-  position: relative;
-  transition: 0.3s;
-}
-.categories .product .top img {
-  height: 23rem;
-}
-.categories .product .top .icon {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border-radius: 50%;
-  font-size: 2.5rem;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-}
-.categories .product .bottom {
-  padding: 2.5rem 2rem;
-  background-color: var(--white-color);
-}
-.categories .product .bottom h4 {
-  font-size: 1.7rem;
-  height: 5rem;
-  transition: 0.3s;
-}
-.categories .product .bottom .d-flex {
-  justify-content: space-between;
-}
-.categories .product .bottom .d-flex:first-child {
-  margin-bottom: 1.5rem;
-  align-items: flex-start;
-}
-.categories .product .bottom .cart-btn {
-  color: var(--white-color);
-  background-color: var(--primary-color);
-  border-radius: 1rem;
-  padding: 0.8rem 1rem;
-  white-space: nowrap;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s;
-}
-.categories .product .bottom .price {
-  color: #909090;
-  font-weight: 500;
-}
-.categories .product .bottom .rating {
-  color: var(--primary-color);
-}
-.categories .product .bottom .rating i:not(:last-child) {
-  margin-right: 0.3rem;
-}
-.categories .product:hover {
-  border: none;
-  transform: scale(1.1);
-  box-shadow: var(--box-shadow-1);
-}
-.categories .product:hover .top {
-  background: var(--gradient);
-}
-.categories .product:hover .top .icon {
-  opacity: 1;
-  visibility: visible;
-}
-.categories .product:hover .cart-btn {
-  visibility: visible;
-  opacity: 1;
-}
-.categories .button {
-  justify-content: center;
-  margin-top: 8rem;
-}
-.categories .button .btn {
-  display: inline-block;
-  padding: 1.5rem 6rem;
-  border-radius: 1rem;
-  color: var(--white-color);
-  font-weight: 500;
-  font-size: 1.8rem;
-  background: var(--btn-gradient);
-  box-shadow: var(--box-shadow-1);
-  cursor: pointer;
-}
-
-/* ========== Statistics =========== */
-.statistics {
-  padding: 10rem 0 10rem;
-  background: linear-gradient(
-    to bottom,
-    rgba(252, 203, 144, 0.15),
-    rgba(255, 185, 188, 0.1)
-  );
-}
-.statistics .title {
-  margin-bottom: 10rem;
-}
-.statistics .row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 3rem;
-}
-.statistics .row .col {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-.statistics .row .col .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 11rem;
-  height: 11rem;
-  font-size: 4rem;
-  background: var(--white-color);
-  border-radius: 1rem;
-  box-shadow: var(--box-shadow-1);
-  color: var(--primary-color);
-  margin-bottom: 6rem;
-}
-.statistics .row .col .icon:hover {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  box-shadow: var(--box-shadow-2);
-}
-.statistics .row .col h3 {
-  margin-bottom: 1.2rem;
-}
-.statistics .row .col p {
-  color: var(--default-color);
-}
-
-@media (max-width: 768px) {
-  .statistics .row .col .icon {
-    width: 8rem;
-    height: 8rem;
-    font-size: 3rem;
-  }
-  .statistics .row .col p {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-/* ========== Blog =========== */
-.blog .title {
-  margin-bottom: 7rem;
-}
-.blog .title h2 {
-  margin-top: 20px;
-}
-.blog .title h4 {
-  margin-top: 20px;
-}
-.blog .title h4 a{
-  margin: 30px;
-  font-size: 20px;
-}
-.blog .title h4 a:hover{
-  color: #ff5e3a;
-}
-.blog .row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 4rem;
-}
-.blog .row .col {
-  border-radius: 2.5rem;
-  overflow: hidden;
-  box-shadow: var(--box-shadow-1);
-}
-.blog .row .col .top {
-  height: 45rem;
-  align-content: center;
-}
-.blog .row .col .top img {
-  height: 100%;
-  object-fit: cover;
-}
-.blog .row .col .bottom {
-  text-align: center;
-  padding: 3rem 0;
-}
-.blog .row .col .bottom h3 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-.blog .row .col .bottom h4 {
-  max-width: 50%;
-  margin: 0 auto 1rem;
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-.blog .row .col .bottom span {
-  color: #909090;
-  font-size: 1.5rem;
-}
-
-@media (max-width: 1600px) {
-  .blog .row .col .top {
-    height: 30rem;
-  }
-  .blog .row .col .bottom h4 {
-    max-width: 85%;
-  }
-}
-@media (max-width: 768px) {
-  .blog .title h4 a{
-    margin: 7px;
-    font-size: 8px;
-  }
-}
-/* ========== Footer =========== */
-.footer {
-  background-color: rgba(252, 203, 144, 0.15);
-  padding: 10rem 3rem 10rem;
-  margin-top: 7rem;
-}
-.footer .row {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-}
-.footer .row .col .logo {
-  margin-bottom: 2.5rem;
-}
-.footer .row .col:first-child p {
-  margin-bottom: 2rem;
-  color: #4f5665;
-  font-size: 1.7rem;
-}
-.footer .row .col .icons {
-  margin-bottom: 2rem;
-}
-.footer .row .col .icon {
-  color: var(--white-color);
-  justify-content: center;
-  height: 4rem;
-  width: 4rem;
-  font-size: 2.5rem;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  cursor: pointer;
-}
-.footer .row .col .icon:not(:last-child) {
-  margin-right: 1rem;
-}
-.footer .row .col:first-child .color {
-  color: var(--primary-color);
-}
-.footer .row .col:last-child {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-.footer .row .col:last-child div {
-  display: flex;
-  flex-direction: column;
-}
-.footer .row .col:last-child div a {
-  font-size: 1.7rem;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  color: #4f5665;
-}
-.footer .row .col:last-child h4 {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 2.5rem;
-}
-.footer .row .col:last-child .d-flex {
-  flex-direction: row;
-  margin-bottom: 2rem;
-}
-.footer .row .col:last-child .d-flex .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  width: auto;
-  height: auto;
-  padding: 0.7rem;
-}
-.footer .row .col:last-child .d-flex span {
-  font-size: 1.8rem;
-  color: #4f5665;
-}
-
-@media (max-width: 1200px) {
-  .footer .col:first-child {
-    display: none;
-  }
-
-  .footer .row {
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  .footer .row .col:last-child {
-    grid-template-columns: 1fr;
-    gap: 3rem 0;
-  }
-}
-/* ========== User Form =========== */
-.icon img {
-  width: 20px;
-}
-
-.user-form {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-height: 100vh;
-  width: 100%;
-  background-color: var(--lightblue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5;
-  z-index: 10000;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 500ms ease-in-out;
-  /* Functionality */
-}
-.user-form.active {
-  background-color: var(--lightpink);
-}
-.user-form.show {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-  visibility: visible;
-}
-.user-form .close-form {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-  background-color: var(--white-color);
-  color: var(--custom);
-  justify-content: center;
-  border-radius: 50%;
-  padding: 1rem;
-  font-size: 2.3rem;
-  cursor: pointer;
-}
-.user-form .container {
-  position: relative;
-  width: 900px;
-  height: 500px;
-  background-color: white;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-.user-form .user {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-.user-form .img-box {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  transition: all 500ms ease-in-out;
-}
-.user-form .img-box img {
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-.user-form .form-box {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  background-color: white;
-  transition: 500ms ease-in-out;
-}
-.user-form .form-box .top {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-}
-.user-form .form-box .top p {
-  font-size: 13px;
-}
-.user-form .form-box .top span {
-  color: var(--custom);
-  cursor: pointer;
-}
-.user-form form {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  width: 100%;
-  max-width: 300px;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.user-form form .form-control:first-child {
-  text-align: center;
-}
-.user-form form .form-control:first-child input {
-  font-family: "Poppins", sans-serif;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  padding: 10px 0;
-  margin-bottom: 10px;
-  text-indent: 16px;
-  width: 100%;
-  color: var(--color);
-  outline: none;
-}
-.user-form form .form-control:first-child input[type="submit"] {
-  display: block;
-  text-align: center;
-  width: 100%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: var(--custom);
-  color: white;
-  transition: 0.5s;
-}
-.user-form form .form-control:first-child input[type="submit"]:hover {
-  background-color: var(--lightblue);
-}
-.user-form form .form-control:first-child h2 {
-  width: 100%;
-  font-weight: 400;
-  font-size: 26px;
-}
-.user-form form .form-control:first-child p {
-  font-size: 15px;
-  margin-bottom: 20px;
-}
-.user-form form .form-control:first-child span {
-  font-size: 13px;
-  display: block;
-  text-align: right;
-  margin-bottom: 20px;
-}
-.user-form form .form-control:first-child div {
-  position: relative;
-}
-.user-form form .form-control:first-child .icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 1rem;
-  cursor: pointer;
-}
-.user-form form .form-control:last-child {
-  text-align: center;
-}
-.user-form form .form-control:last-child p {
-  position: relative;
-  display: inline-block;
-  font-size: 14px;
-}
-.user-form form .form-control:last-child p::after {
-  content: "";
-  position: absolute;
-  right: -50px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 2px;
-  background-color: #ddd;
-}
-.user-form form .form-control:last-child p::before {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 2px;
-  background-color: #ddd;
-}
-.user-form form .form-control:last-child .icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-.user-form form .form-control:last-child .icons .icon {
-  cursor: pointer;
-}
-.user-form form .form-control:last-child .icons .icon:not(:last-child) {
-  margin-right: 15px;
-}
-.user-form .container .signup {
-  pointer-events: none;
-}
-.user-form .container .signup .form-box {
-  top: 100%;
-}
-.user-form .container .signup .img-box {
-  top: -100%;
-}
-.user-form .container.active .signup {
-  pointer-events: initial;
-}
-.user-form .container.active .signup .form-box {
-  top: 0;
-}
-.user-form .container.active .signup .img-box {
-  top: 0;
-}
-.user-form .container .login .form-box {
-  top: 0;
-}
-.user-form .container .login .img-box {
-  top: 0;
-}
-.user-form .container.active .login .form-box {
-  top: 100%;
-}
-.user-form .container.active .login .img-box {
-  top: -100%;
-}
-
-@media (max-width: 996px) {
-  .user-form .container {
-    max-width: 400px;
-  }
-  .user-form .container .img-box {
-    display: none;
-  }
-  .user-form .container .form-box {
-    width: 100%;
-  }
-  .user-form .container.active .login .form-box {
-    top: -100%;
-  }
-}
-@media (max-width: 567px) {
-  .header .navbar .row .nav-list a.user-link {
-    display: block;
-  }
-
-  .user-form {
-    padding: 0;
-  }
-  .user-form .close-form {
-    top: 10px;
-    right: 10px;
-    padding: 0.7rem;
-    font-size: 2.3rem;
-  }
-}
-
-/*# sourceMappingURL=styles.css.map */
-
-  </style>
   <head>
-    <meta name="description" content="Sell Not Tea - Get Premium Tee With Affordable Price!">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCHMKF5N73"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-RCHMKF5N73');
-    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- ====== Favicon ====== -->
     <link
       rel="shortcut icon"
-      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90C8fmNFbLejSRZE4n6ucaYwnF04iZ5VFHUj2sdeXVT-2pDsUjsYUczRN2frCCh5TZe4-ntXakBiymSCHmygaovxd4_wzHn6ZT6nDMKAT62klYuuy5izFN7jiE1pdtFhu4obnjxBe9B4YJ636bxOYL1UdMeisiq8pO7FVDHL-ipcjz0wceZmeU7m-/s320/SKORTEEFAVIB.png"
+      href="images/favicon-32x32.png"
       type="image/png"
     />
     <!-- ====== Boxicons ====== -->
@@ -1135,7 +22,7 @@ img {
     />
     <!-- ====== Custom CSS ====== -->
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Skor Tee</title>
+    <title>Fashion Shop</title>
   </head>
   <body>
     <!-- ====== Header ====== -->
@@ -1144,16 +31,15 @@ img {
       <nav class="navbar">
         <div class="row container d-flex">
           <div class="logo">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90C8fmNFbLejSRZE4n6ucaYwnF04iZ5VFHUj2sdeXVT-2pDsUjsYUczRN2frCCh5TZe4-ntXakBiymSCHmygaovxd4_wzHn6ZT6nDMKAT62klYuuy5izFN7jiE1pdtFhu4obnjxBe9B4YJ636bxOYL1UdMeisiq8pO7FVDHL-ipcjz0wceZmeU7m-/w200-h200/SKORTEEFAVIB.png" width="74" height="74" alt="" />
+            <img src="./images/logo.svg" alt="" />
           </div>
 
           <div class="nav-list d-flex">
-            <a href="https://www.skortee.ml">Home</a>
-            <a href="#tee">Tee</a>
-            <a href="">Hoodie</a>
-            <a href="">Sweatshirt</a>
+            <a href="">Home</a>
+            <a href="">Shop</a>
+            <a href="">Pages</a>
             <a href="">About Us</a>
-            <a href="">Contact</a>
+            <a href="">Lookups</a>
             <div class="close">
               <i class="bx bx-x"></i>
             </div>
@@ -1162,13 +48,13 @@ img {
 
           <div class="icons d-flex">
             <div class="icon d-flex"><i class="bx bx-search"></i></div>
-            <!-- <div class="icon user-icon d-flex">
+            <div class="icon user-icon d-flex">
               <i class="bx bx-user"></i>
             </div>
             <div class="icon d-flex">
               <i class="bx bx-bell"></i>
               <span></span>
-            </div> -->
+            </div>
           </div>
 
           <!-- Hamburger -->
@@ -1178,132 +64,212 @@ img {
         </div>
       </nav>
 
-    <!-- ====== Blogs ====== -->
-    <section id="newa" class="section blog">
-      <div class="title">
-        <span><b style="color: red;">NEW ARRIVAL</b></span>
+      <!-- ====== Hero Area ====== -->
+      <div class="hero">
+        <div class="row container d-flex">
+          <div class="col">
+            <span class="subtitle">Limited Time Only For Winter</span>
+            <h1>fash<span class="i">i</span>on</h1>
+            <p>LOOK YOUR BEST ON YOUR BEST DAY</p>
+
+            <button class="btn">Explore Now!</button>
+          </div>
+          <img src="./images/woman-in-cart.png" alt="" />
+        </div>
       </div>
-      <div class="row container">
-        <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/overthinking-killing-yoursel"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4JqDCSSWc1P7Qd4aPjYqPC20Gw6t4tG5WKRAnm7UylTAoposAQJEf-0Lbegv6_H_wmZp9j478LxnxMKLqItsVjdV6iWWXC4-UyXbyUFlW7BuS_T6ib317-Si9eeKiH1erLIf_1h-u3_Pw0nMw97f5v4Q3ItRnCXYx1MuAP-wxxfp1cCDvebTnQMgF/s16000/1.png" alt="" /></a>
-          </div>
-          <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/overthinking-killing-yoursel"><h3>Overthinking = Killing Yourself Mug</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/overthinking-killing-yoursel">
-            <h4>
-              STOP OVERTHINKING!!!
-            </h4></a>
-            <!-- <span>COLORS: </span> -->
+    </header>
+    <!-- ====== Collection ====== -->
+    <section class="section collection">
+      <div class="title">
+        <span>COLLECTION</span>
+        <h2>Our Top Collection</h2>
+      </div>
+      <div class="filters d-flex">
+        <div data-filter="Jewellery">Jewellery</div>
+        <div data-filter="Accessories">Accessories</div>
+        <div data-filter="Dresses">Dresses</div>
+        <div data-filter="Footwear">Footwear</div>
+      </div>
+
+      <div class="products container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper" id="products">
+            <div class="swiper-slide">
+              <!-- <div class="product">
+                <div class="top d-flex">
+                  <img src="./images/product-1.png" alt="" />
+                  <div class="icon d-flex">
+                    <i class="bx bxs-heart"></i>
+                  </div>
+                </div>
+                <div class="bottom">
+                  <h4>Nike Air Men’s Hoodie - Imported Hoodie Red</h4>
+                  <div class="d-flex">
+                    <div class="price">$150</div>
+                    <div class="rating">
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/energy-never-lie"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqHIX-6EwE8cKmWOvYqFbsVUwiMi2K2gKt7I3k7PmTztmdWOW54kMGGmdpjXPO3fZaj3LBct7IaPBg-eXaJbDlartwYsCgacozVMZl468Hmn2yOCSoMwji3elXGznlkMq7kZLWebNvu48P1E2jwrCk2Fjm_8LuEm7N-LkqDiJvrQF0WkD6mt4GCQR5/s16000/g.png" alt="" /></a>
-          </div>
-          <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/energy-never-lie"><h3>Energy Never Lie</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/energy-never-lie">
-              <h4>
-                Always Trust The Energy
-              </h4>
-            </a>
-            <!-- <span>COLORS: </span> -->
-          </div>
+        <div class="pagination">
+          <div class="custom-pagination"></div>
         </div>
-        <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/overthinking-killing-yourself"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKed9brcYttHWlzSDRgZhtOIFdFQ8nkE0MK9dIgJZ2_Fi6CDoYsPd-5YlCdweiFQPqmDwfXS0mqWWKa-9aRL41AcDI-0AfhzeKFSwP2EWq45RdV4rbJM0-IEyr_1MVJhZHjPKTHCwyaO9xkZyNEzz3kIQEsLmwaBGeLM8gbm3PKa4POCG1RsCDy5zf/s16000/f.png" alt="" /></a>
-          </div>
-          <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/overthinking-killing-yourself"><h3>Overthinking = Killing Yourself</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/overthinking-killing-yourself">
-              <h4>
-                STOP! Overthinking 
-              </h4>
-            </a>
-            <!-- <span>COLORS: </span> -->
-          </div>
-        </div>
+      </div>
     </section>
-    <section id="tee" class="section blog">
+
+    <!-- ====== New Arrival ====== -->
+    <section class="section new-arrival">
       <div class="title">
-        <span>TEE COLLECTION</span>
-        <h4><a href="#tt">Triblend Tee</a><a href="#pt">Premium Tee</a><a href="#clst" >Classic Long Sleeve Tee</a><a href="#plst">Premium Long Sleeve Tee</a></h4>
-        <section id="tt"><h2>Triblend Tee</h2></section>
+        <span>NEW ARRIVAL</span>
+        <h2>Latest Collection</h2>
       </div>
+
+      <div class="row container">
+        <div class="col col-1">
+          <img src="./images/poster-1.png" alt="" />
+          <h3>
+            2021 Trends <br />
+            Women’s Smart Skirt
+          </h3>
+        </div>
+        <div class="col col-2">
+          <img src="./images/poster-2.png" alt="" />
+          <h3>
+            2021 Trends <br />
+            Women’s Smart Skirt
+          </h3>
+        </div>
+        <div class="col col-3">
+          <img src="./images/poster-3.png" alt="" />
+          <h3>
+            2021 Trends <br />
+            Women’s Smart Shirt <br />
+            <span>Discover More:</span>
+          </h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Categories ====== -->
+    <section class="section categories">
+      <div class="title">
+        <span>CATEGORIES</span>
+        <h2>2021 Latest Collection</h2>
+      </div>
+
+      <div class="products container">
+        <!-- <div class="product">
+          <div class="top d-flex">
+            <img src="./images/product-1.png" alt="" />
+            <div class="icon d-flex">
+              <i class="bx bxs-heart"></i>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="d-flex">
+              <h4>Nike Air Men’s Hoodie - Imported Hoodie Red</h4>
+              <a href="" class="btn cart-btn">Add to Cart</a>
+            </div>
+            <div class="d-flex">
+              <div class="price">$150</div>
+              <div class="rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="button d-flex">
+        <a class="btn loadmore">Load More</a>
+      </div>
+    </section>
+
+    <!-- ====== Statistics ====== -->
+    <section class="section statistics">
+      <div class="title">
+        <span>STATS</span>
+        <h2>Our Statistics</h2>
+      </div>
+
       <div class="row container">
         <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-anime-edition-1"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg725DsltHAta571a3NajI1Hh3OrQuN3WGl8ppc-4TPMaqMOrVPuVF3TkVpZY5wTvU4fn9bJ1cpJmZnxNSl-E2hogl7ICr4UaC4A_67uMA4WjmXubqAmdO0Iv6W_9-0qIsFyGTWHuSLBEzIbwXwpJ6UgTrkPJidsJPTx0dcKuqn02ywEVvPDbAKo85V/s16000/b.png" alt="" /></a>
+          <div class="icon">
+            <i class="bx bxs-check-square"></i>
           </div>
-          <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-anime-edition-1"><h3>ST ANIME EDITION #1</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-anime-edition-1">
-              <h4>
-                We go flamboyantly from now on
-              </h4>
-            </a>
-            <!-- <span>COLORS: </span> -->
-          </div>
+          <h3>Easy Order System</h3>
+          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
         </div>
         <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-anime-edition-2"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCh9Xie8VyqswRB1fDxW9yeJaGQ453NCNn4hrpLEQ-znrPhX7dJ7tO-oxXjUcj0Of3d1TH_BHaVV2Gp_06uE3Xg4UvnvHZBdXEE1KOS9hAcBjOkd02VtPegVx9mPa4moiWnkWZnI-UISoHsqywPX4l1m0sIOH_7Cob_yy7Xx8G7wnl2ed_R634dv9q/s16000/c.png" alt="" /></a>
+          <div class="icon">
+            <i class="bx bxs-user"></i>
           </div>
-          <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-anime-edition-2"><h3>ST ANIME EDITION #2</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-anime-edition-2">
-              <h4>
-                The "Score" is done!!! We are going for the wiiiiin!!!
-              </h4>
-            </a>
-            <!-- <span>COLORS: </span> -->
-          </div>
+          <h3>On Time Delievery</h3>
+          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
         </div>
         <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-1"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrT_VTJzTTkc0CpQH8OgZAH8dOKdEXyvRiWGJgLxzvFlMdgUMuqgPClPgdYUumx4IG8O2EaFsDTioJMJxFwjlNUySABdg3s-izPXgm95sPk2aTWi0OmaqhXikAf0NP9uqf2DYmWhfBL2q3qs5V-KWJTDaMSjjzZ7vnZNUxUpx_-NoB8eDBxH9iFtTF/s16000/a.png" alt="" /></a>
+          <div class="icon">
+            <i class="bx bxs-dollar-circle"></i>
+          </div>
+          <h3>Money Back Gaurantee</h3>
+          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+        </div>
+        <div class="col">
+          <div class="icon">
+            <i class="bx bxs-user"></i>
+          </div>
+          <h3>24/7 Customer Support</h3>
+          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Blogs ====== -->
+    <section class="section blog">
+      <div class="title">
+        <span>BLOGS</span>
+        <h2>Latest News</h2>
+      </div>
+
+      <div class="row container">
+        <div class="col">
+          <div class="top">
+            <img src="./images/blog-1.png" alt="" />
           </div>
           <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-1"><h3>ST Nature Edition #1</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-1">
+            <h3>Trendy</h3>
             <h4>
-              Sunday Fun Day Enjoy Your Weekend!
-            </h4></a>
-            <!-- <span>COLORS: </span> -->
+              Lorem Ispum is a placeholder text commomly used as a free text.
+            </h4>
+            <span>10 January 2021</span>
           </div>
         </div>
         <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-2"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOh9P9-0t8sqALMQYzKJ3xYCIZMnXoQumNfCa3x9SLeDGldNb_O7WPhFB8EWQJOx49wGCVwuOU1k2RWdLit3z5BFvJw0N0r-wbt3Py8qIuqZz81rOs9DpFFTBQd_-yhANVZki5AKqOEH0SZgoXCzawgzIMr20Y9JuugnsX6qCmavWnhvDgClDOUYIv/s16000/e.png" alt="" /></a>
+          <div class="top">
+            <img src="./images/blog-2.png" alt="" />
           </div>
           <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-2"><h3>ST Nature Edition #2</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-2">
-              <h4>
-                Shine Bright Like Sunflower
-              </h4>
-            </a>
-            <!-- <span>COLORS: </span> -->
+            <h3>Trendy</h3>
+            <h4>
+              Lorem Ispum is a placeholder text commomly used as a free text.
+            </h4>
+            <span>10 January 2021</span>
           </div>
         </div>
         <div class="col">
-          <div class="top center">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-3"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfLp9DoPXSVBMzPNNB-SeqSVH4al9VpmwzYqxuszuWBIbRNdGmIqWY6rBvrqiUaf09_gtje1VF7LicD65BK8IcYzX54AeXPASlvqzgwOjKFohQHWqtbmeqBX1bpLgqVHSYoGzit-3BDC1W7u1wHNnKovH1aXo-d_mivBHdTfRjAGxLV2k1KaoTHN41/s16000/d.png" alt="" /></a> 
-          </div>
-          <div class="bottom">
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-3"><h3>	ST Nature Edition #3</h3></a>
-            <a href="https://my-store-bd27e9.creator-spring.com/listing/st-nature-edition-3">
-              <h4>
-                Red Rose Sunday
-              </h4>
-            </a>
-            <!-- <span>COLORS: </span> -->
-          </div>
-        </div>
-        <!-- <div class="col">
-          <div class="top center">
+          <div class="top">
             <img src="./images/blog-3.png" alt="" />
           </div>
           <div class="bottom">
@@ -1313,7 +279,7 @@ img {
             </h4>
             <span>10 January 2021</span>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
 
@@ -1322,11 +288,11 @@ img {
       <div class="row container">
         <div class="col">
           <div class="logo d-flex">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicbEszMY34XQx6JW4uWhk_-o-tr3cbA6dCNDtCd99rYOQCaa7BMW0xWF27PWM5UO2g7HagRvYKiWVtBhkYP-suzy4C2ZPMas90Zp-pzdtvVKu_K_aKAHSLKGLL019iS6dX2wQElRjeXhPUzU3xdxiexo93C8kSPeHRlN8ciJNzjr9hCmc77QdwfTDn/w200-h200/SKORTEE.png" alt="logo" />
+            <img src="./images/logo.svg" alt="logo" />
           </div>
           <p>
-            PRODUCTS LISTED ABOVE ARE FROM<br />
-            MY TEESPRING COLLECTION.
+            Lorem ispum is a placeholder text <br />
+            commonly used as a free text.
           </p>
           <div class="icons d-flex">
             <div class="icon d-flex">
@@ -1337,30 +303,49 @@ img {
             <div class="icon d-flex"><i class="bx bxl-youtube"></i></div>
           </div>
           <p class="color">
-            COPYRIGHTS @SKORTEE <script>document.write(new Date().getFullYear())</script>
+            Copyrights 2021 <br />
+            @Iamabdulqadeer01
           </p>
         </div>
         <div class="col">
           <div>
             <h4>Product</h4>
-            <a href="#tee">Tee</a>
-            <a href="">Hoodie</a>
-            <a href="">Sweatshirt</a>
+            <a href="">Download</a>
+            <a href="">Pricing</a>
+            <a href="">Locations</a>
+            <a href="">Server</a>
+            <a href="">Countries</a>
+            <a href="">Blog</a>
           </div>
           <div>
             <h4>Category</h4>
-            <a href="#newa">New Arrivals</a>
+            <a href="">Men</a>
+            <a href="">Women</a>
+            <a href="">Kids</a>
             <a href="">Best Seller</a>
+            <a href="">New Arrivals</a>
+          </div>
+          <div>
+            <h4>My Account</h4>
+            <a href="">My Account</a>
+            <a href="">Discount</a>
+            <a href="">Returns</a>
+            <a href="">Order History</a>
+            <a href="">Order Tracking</a>
           </div>
           <div>
             <h4>Contact Us</h4>
             <div class="d-flex">
+              <div class="icon"><i class="bx bxs-map"></i></div>
+              <span>123 Street Trafford, London, UK</span>
+            </div>
+            <div class="d-flex">
               <div class="icon"><i class="bx bxs-envelope"></i></div>
-              <span>skorteestore@gmail.com</span>
+              <span>info@sitename.com</span>
             </div>
             <div class="d-flex">
               <div class="icon"><i class="bx bxs-phone"></i></div>
-              <span>+855967352427</span>
+              <span>+456 789 789 001</span>
             </div>
           </div>
         </div>
@@ -1474,62 +459,7 @@ img {
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- ====== Custom Script ====== -->
-    <script>
-      /* ========== Navigation =========== */
-const navList = document.querySelector(".nav-list");
-
-document.querySelector(".hamburger").onclick = () => {
-  navList.classList.add("show");
-};
-
-document.querySelector(".close").onclick = () => {
-  navList.classList.remove("show");
-};
-
-/* ========== User Form =========== */
-const formWrapper = document.querySelector(".form-wrapper");
-const inputs = document.querySelectorAll(".form-box input[type = 'password']");
-const icons = [...document.querySelectorAll(".form-icon")];
-const spans = [...document.querySelectorAll(".form-box .top span")];
-const userForm = document.querySelector(".user-form");
-
-[".user-icon", ".user-link"].forEach((p) => {
-  document.querySelector(p).onclick = () => {
-    userForm.classList.add("show");
-    navList.classList.remove("show");
-  };
-});
-
-document.querySelector(".close-form").onclick = () => {
-  userForm.classList.remove("show");
-};
-
-spans.map((span) => {
-  span.addEventListener("click", (e) => {
-    const color = e.target.dataset.id;
-    formWrapper.classList.toggle("active");
-    userForm.classList.toggle("active");
-    document.querySelector(":root").style.setProperty("--custom", color);
-  });
-});
-
-Array.from(inputs).map((input) => {
-  icons.map((icon) => {
-    icon.innerHTML = `<img src="./images/eye.svg" alt="" />`;
-
-    icon.addEventListener("click", () => {
-      const type = input.getAttribute("type");
-      if (type === "password") {
-        input.setAttribute("type", "text");
-        icon.innerHTML = `<img src="./images/hide.svg" alt="" />`;
-      } else if (type === "text") {
-        input.setAttribute("type", "password");
-        icon.innerHTML = `<img src="./images/eye.svg" alt="" />`;
-      }
-    });
-  });
-});
-
-    </script>
+    <script src="./js/product.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
